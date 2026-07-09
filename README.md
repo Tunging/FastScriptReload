@@ -25,7 +25,7 @@ Works with any code editor.
 ## Quickstart
 1) Download [latest FSR version](https://github.com/handzlikchris/FastScriptReload/releases/download/1.4-rc1/Fast.Script.Reload.unitypackage) and import to Unity
 > You can also install via package manager. Window -> Package Manager -> + -> Add package from Git url:
-> https://github.com/handzlikchris/FastScriptReload.git?path=Assets
+> https://github.com/Tunging/FastScriptReload.git?path=Assets#branch-2021
 
 > Pulling other branches/commits can be done by appending branch name, eg https://github.com/handzlikchris/FastScriptReload.git?path=Assets#features/ai-code-rewrite-fixes
 3) Play
