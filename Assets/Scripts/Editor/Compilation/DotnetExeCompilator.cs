@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -237,7 +237,7 @@ You can also:
 
             if (!_assemblyNameToFriendAssemblyCache.TryGetValue(assemblyName, out var assemblies))
             {
-                _assemblyNameToFriendAssemblyCache[assemblyName] = assemblies = new();
+                _assemblyNameToFriendAssemblyCache[assemblyName] = assemblies = new Dictionary<string, List<Assembly>>();
                 foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
                 {
                     if (assembly.IsDynamic) continue;
