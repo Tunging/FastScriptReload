@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+#if !UNITY_2021_1_OR_NEWER
+using BaseNamespaceDeclarationSyntax = Microsoft.CodeAnalysis.CSharp.Syntax.NamespaceDeclarationSyntax;
+#endif
 
 namespace FastScriptReload.Editor.Compilation.CodeRewriting
 {

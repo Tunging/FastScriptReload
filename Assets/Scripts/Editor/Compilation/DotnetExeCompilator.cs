@@ -237,7 +237,7 @@ You can also:
 
             if (!_assemblyNameToFriendAssemblyCache.TryGetValue(assemblyName, out var assemblies))
             {
-                _assemblyNameToFriendAssemblyCache[assemblyName] = assemblies = new Dictionary<string, List<Assembly>>();
+                _assemblyNameToFriendAssemblyCache[assemblyName] = assemblies = new List<Assembly>();
                 foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
                 {
                     if (assembly.IsDynamic) continue;
@@ -250,7 +250,7 @@ You can also:
                         var separatorIndex = friendAssemblyName.IndexOf(AssemblyNamePublicKeySeparator);
                         if (separatorIndex != ~0)
                         {
-                            friendAssemblyName = friendAssemblyName[..separatorIndex];
+                            friendAssemblyName = friendAssemblyName.Substring(0, separatorIndex);
                         }
 
                         if (friendAssemblyName == assemblyName)

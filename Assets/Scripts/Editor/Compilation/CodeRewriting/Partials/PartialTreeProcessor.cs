@@ -48,8 +48,10 @@ namespace FastScriptReload.Editor.Compilation.CodeRewriting
             }
 
             var combinedTypeDeclarations = new List<MemberDeclarationSyntax>();
-            foreach (var (namespaceName, types) in combinedTypes)
+            foreach (var __nsKv in combinedTypes)
             {
+                var namespaceName = __nsKv.Key;
+                var types = __nsKv.Value;
                 var typesInNamespace = types
                     .Select(type => PartialTypeCombiner.CombinePartialType(type.Value))
                     .ToList<MemberDeclarationSyntax>();

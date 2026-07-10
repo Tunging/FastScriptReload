@@ -14,6 +14,9 @@ using ImmersiveVrToolsCommon.Runtime.Logging;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+#if !UNITY_2021_1_OR_NEWER
+using BaseNamespaceDeclarationSyntax = Microsoft.CodeAnalysis.CSharp.Syntax.NamespaceDeclarationSyntax;
+#endif
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;

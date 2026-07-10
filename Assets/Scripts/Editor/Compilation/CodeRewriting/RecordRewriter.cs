@@ -13,6 +13,7 @@ namespace FastScriptReload.Editor.Compilation.CodeRewriting
 	        
         }
         
+#if UNITY_2021_1_OR_NEWER
         public override SyntaxNode VisitRecordDeclaration(RecordDeclarationSyntax node)
         {
 	        return AdjustRecordName(node, node.Identifier);
@@ -32,5 +33,6 @@ namespace FastScriptReload.Editor.Compilation.CodeRewriting
 		        $"{nameof(RecordeRewriter)}:{nameof(AdjustRecordName)}"
 		    );
         }
+#endif
     }
 }

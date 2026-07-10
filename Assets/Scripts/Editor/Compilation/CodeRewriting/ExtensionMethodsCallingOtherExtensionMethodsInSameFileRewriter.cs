@@ -30,7 +30,8 @@ namespace FastScriptReload.Editor.Compilation.CodeRewriting
                 if (parameters.Count > 0 && parameters[0].Modifiers.Any(SyntaxKind.ThisKeyword))
                 {
                     var thisArgumentName = parameters[0].Identifier.Text;
-                    classDeclaredMethodNameToThisArgName.TryAdd(methodDeclaration.Identifier.Text, thisArgumentName);
+                    if (!classDeclaredMethodNameToThisArgName.ContainsKey(methodDeclaration.Identifier.Text))
+                        classDeclaredMethodNameToThisArgName.Add(methodDeclaration.Identifier.Text, thisArgumentName);
                 }
             }
             
